@@ -8,7 +8,7 @@ Setup:
 
 This plugin has had the majority of the functionality stripped out, leaving the main plugin file `woocommerce-test.php` and some related includes, plus a template file at `templates/dummy-template.php` 
 
-The theme contains two template files, `woocommerce/dummy-template.php` (originally copied from our plugin) and `woocommerce/single-product.php` (originally copied from woocommerce). Both are out of date. You will notice that WooCOmmerce provides a notification to the end user that the default woocommerce template is out of date.
+The theme contains two template files, `woocommerce/dummy-template.php` (originally copied from our plugin) and `woocommerce/single-product.php` (originally copied from woocommerce). Both are out of date. You will notice that WooCommerce provides a notification to the end user that the default WooCommerce template is out of date.
 
 ![Template notification screenshot](/Screenshot.png?raw=true)
 
