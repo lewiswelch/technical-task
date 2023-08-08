@@ -10,6 +10,8 @@ This plugin has had the majority of the functionality stripped out, leaving the 
 
 The theme contains two template files, `woocommerce/dummy-template.php` (originally copied from our plugin) and `woocommerce/single-product.php` (originally copied from woocommerce). Both are out of date. You will notice that WooCOmmerce provides a notification to the end user that the default woocommerce template is out of date.
 
+![Template notification screenshot](/Screenshot.png?raw=true)
+
 The task is to add functionality to the test plugin to provide a similar notice to users regarding our own template file being out of date. Please fork this repository and submit your completed code via pull request. 
 
 Any accompanying notes or video explanation/screencast explaining the solution can be added to this readme in the pull request.
