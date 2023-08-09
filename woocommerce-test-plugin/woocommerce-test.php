@@ -5,6 +5,19 @@
  * @package WooCommerce Test
  */
 
+function display_template_notice() {
+	$current_version = get_template_version(); // Get the current version
+	$latest_version = get_latest_version(); // Get the latest version
+
+	if (version_compare($current_version, $latest_version, '<')) { // Compare current version with latest to check if out of date which then will output this message
+		echo '<div class="notice notice-warning">
+  			<p>Your template is out of date. Please update it to the latest version.</p>
+     		</div>';
+	}
+}
+add_action('admin_notices', 'display_template_notice'); // Add function to admin notices hook
+
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
