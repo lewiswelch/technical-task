@@ -5,17 +5,25 @@
  * @package WooCommerce Test
  */
 
-function display_template_notice() {
-	$current_version = get_template_version(); // Get the current version
-	$latest_version = get_latest_version(); // Get the latest version
-
-	if (version_compare($current_version, $latest_version, '<')) { // Compare current version with latest to check if out of date which then will output this message
-		echo '<div class="notice notice-warning">
-  			<p>Your template is out of date. Please update it to the latest version.</p>
-     		</div>';
-	}
+function display_template_out_of_date_notice() { // Function to add warning message that template is out of date
+    ?>
+    <div class="notice notice-warning">
+        <p><?php _e('The template provided by this plugin is out of date. Please update the template to the latest version.'); ?></p>
+    </div>
+    <?php
 }
-add_action('admin_notices', 'display_template_notice'); // Add function to admin notices hook
+
+function check_template_version() {
+    $plugin_template_version = '1.0.0'; // Plugin template version
+    $theme_template_version = '2.0.0'; // Theme template version
+
+    if (version_compare($plugin_template_version, $theme_template_version, '>')) { // Compare version of theme & plugin
+        add_action('admin_notices', 'display_template_out_of_date_notice');
+    }
+}
+
+// Hook to check the template version on admin_init
+add_action('admin_init', 'check_template_version');
 
 
 if ( ! defined( 'ABSPATH' ) ) {
